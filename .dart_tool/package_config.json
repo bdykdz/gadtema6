@@ -320,6 +320,24 @@
       "languageVersion": "2.18"
     },
     {
+      "name": "redux",
+      "rootUri": "file:///C:/Users/TPF/AppData/Local/Pub/Cache/hosted/pub.dev/redux-5.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "redux_epics",
+      "rootUri": "file:///C:/Users/TPF/AppData/Local/Pub/Cache/hosted/pub.dev/redux_epics-0.15.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
+      "name": "rxdart",
+      "rootUri": "file:///C:/Users/TPF/AppData/Local/Pub/Cache/hosted/pub.dev/rxdart-0.27.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "shelf",
       "rootUri": "file:///C:/Users/TPF/AppData/Local/Pub/Cache/hosted/pub.dev/shelf-1.4.1",
       "packageUri": "lib/",
@@ -434,7 +452,7 @@
       "languageVersion": "2.19"
     }
   ],
-  "generated": "2023-05-07T19:16:14.764017Z",
+  "generated": "2023-05-07T19:18:37.781327Z",
   "generator": "pub",
   "generatorVersion": "2.19.6"
 }
