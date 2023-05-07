@@ -4,3 +4,4 @@ import 'package:redux/src/store.dart';
 
 import '../../models/index.dart';
 part 'images_container.dart';
+part 'is_loading_container.dart';
