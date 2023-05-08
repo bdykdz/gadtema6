@@ -1,16 +1,8 @@
-# flutter_application_1
+Unsplash KeyWord Phtoto displayer
 
-A new Flutter project. try
+Tema 6 la GAD Flutter unde folosesc sistemul Redux pt state management la o aplicatie ce preia API e la Unsplash pentru a reda imagini dupa un keyword - in cazul meu Travis Scott 
+![Travis Scott Fire GIF](https://media.tenor.com/P98RZR_l9q4AAAAC/travis-scott-fire.gif)
 
-## Getting Started
 
-This project is a starting point for a Flutter application.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![image](https://user-images.githubusercontent.com/129845958/236794902-fa0da8b6-474c-47f3-b490-5bbc69b78fb0.png)
