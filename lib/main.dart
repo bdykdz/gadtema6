@@ -56,7 +56,7 @@ class _HomePageState extends State<HomePage> {
   final ScrollController _controller = ScrollController();
 
   @override
-  void initState(){
+  void initState() {
     super.initState();
     _controller.addListener(_onScroll);
   }
@@ -68,17 +68,14 @@ class _HomePageState extends State<HomePage> {
     final double maxRange = _controller.position.maxScrollExtent;
 
     if (store.state.hasMore && !store.state.isLoading && (maxRange - offset) < height * 3) {
-      store.dispatch(GetImages.start(page: store.state.page  , search: store.state.searchTerm));
+      store.dispatch(GetImages.start(page: store.state.page, search: store.state.searchTerm));
     }
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-         centerTitle: true,
-      title: Text(
-        'Google Images')
-      ),
+      appBar: AppBar(centerTitle: true, title: const Text('Google Images')),
       body: IsLoadingContainer(builder: (BuildContext context, bool isLoading) {
         return ImagesContainer(builder: (BuildContext context, List<Picture> images) {
           if (isLoading && images.isEmpty) {

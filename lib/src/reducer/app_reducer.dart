@@ -23,7 +23,11 @@ AppState _getImagesStart(AppState state, GetImagesStart action) {
 }
 
 AppState _getImagesSuccesful(AppState state, GetImagesSuccessful action) {
-  return state.copyWith(isLoading: false, hasMore: action.images.isNotEmpty,page: state.page + 1 ,images: <Picture>[...state.images, ...action.images]);
+  return state.copyWith(
+      isLoading: false,
+      hasMore: action.images.isNotEmpty,
+      page: state.page + 1,
+      images: <Picture>[...state.images, ...action.images]);
 }
 
 AppState _getImagesError(AppState state, GetImagesError action) {
