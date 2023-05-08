@@ -12,7 +12,7 @@ import 'src/presentation/containers/index.dart';
 import 'src/reducer/app_reducer.dart';
 
 void main() {
-  const String apiKey = '';
+  const String apiKey = 'y1Sic6aeJeVL4pJPR5NwdxzHVx8kUSL_A3_LkPZQibw';
   final Client client = Client();
   final UnsplashApi api = UnsplashApi(client, apiKey);
   final AppEpics epic = AppEpics(api);
@@ -45,13 +45,40 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
   @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  final ScrollController _controller = ScrollController();
+
+  @override
+  void initState(){
+    super.initState();
+    _controller.addListener(_onScroll);
+  }
+
+  void _onScroll() {
+    final Store<AppState> store = StoreProvider.of<AppState>(context);
+    final double height = MediaQuery.of(context).size.height;
+    final double offset = _controller.position.pixels;
+    final double maxRange = _controller.position.maxScrollExtent;
+
+    if (store.state.hasMore && !store.state.isLoading && (maxRange - offset) < height * 3) {
+      store.dispatch(GetImages.start(page: store.state.page  , search: store.state.searchTerm));
+    }
+  }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+         centerTitle: true,
+      title: Text(
+        'Google Images')
+      ),
       body: IsLoadingContainer(builder: (BuildContext context, bool isLoading) {
         return ImagesContainer(builder: (BuildContext context, List<Picture> images) {
           if (isLoading && images.isEmpty) {
@@ -60,6 +87,7 @@ class HomePage extends StatelessWidget {
             );
           }
           return GridView.builder(
+            controller: _controller,
             itemCount: images.length + 1,
             itemBuilder: (BuildContext context, int index) {
               if (index == images.length) {
